@@ -5,7 +5,7 @@ CUDA_BIN_DIR :=  /home/wwr/Desktop/EXEs/PolybenchExe
 
 
 all:
-	nvcc -O3 -gencode=arch=compute_80,code=sm_80 -gencode=arch=compute_80,code=compute_80 ${NVCC_ADDITIONAL_ARGS} ${CUFILES} -o ${EXECUTABLE} ${LINK_FLAG}; cp ${EXECUTABLE} ${CUDA_BIN_DIR}
+	nvcc -O3 -gencode=arch=compute_80,code=compute_80 ${NVCC_ADDITIONAL_ARGS} ${CUFILES} -o ${EXECUTABLE} ${LINK_FLAG}; cp ${EXECUTABLE} ${CUDA_BIN_DIR}
 	 
 
 clean:
