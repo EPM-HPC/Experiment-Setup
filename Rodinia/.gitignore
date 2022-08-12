@@ -1,0 +1,10 @@
+data/*
+!data/.gitkeep
+
+*.o
+*.orig
+*.swp
+*.gch
+*.out
+
+.ipynb_checkpoints/*
