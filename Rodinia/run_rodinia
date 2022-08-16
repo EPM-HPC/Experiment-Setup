@@ -1,50 +1,31 @@
-./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+# All Rodinia Run Command
+DATA_DIR=/home/wwr/Desktop/ExperimentDataProcess/Rodinia/data
+
+./b+tree.out file $DATA_DIR/b+tree/mil.txt command $DATA_DIR/b+tree/command.txt
 ./backprop 2097152
-./bfs ../../data/bfs/graph65536.txt
-
-./euler3d ../../data/cfd/fvcorr.domn.097K   
-./euler3d ../../data/cfd/fvcorr.domn.193K   
-./euler3d ../../data/cfd/missile.domn.0.2M  
-
+./bfs $DATA_DIR/bfs/graph65536.txt
+./euler3d $DATA_DIR/cfd/fvcorr.domn.097K   
+./euler3d $DATA_DIR/cfd/fvcorr.domn.193K   
+./euler3d $DATA_DIR/cfd/missile.domn.0.2M  
 ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
-
-./gaussian -f ../../data/gaussian/matrix4.txt
-
-./heartwall ../../data/heartwall/test.avi 20
-
-./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
-./3D 512 8 100 ../../data/hotspot3D/power_512x8 ../../data/hotspot3D/temp_512x8 output.out
-
-./pavle ../../data/huffman/test1024_H2.206587175259.in 
-
+./gaussian -f $DATA_DIR/gaussian/matrix4.txt
+./heartwall $DATA_DIR/heartwall/test.avi 20
+./hotspot 512 2 2 $DATA_DIR/hotspot/temp_512 $DATA_DIR/hotspot/power_512 output.out
+./3D 512 8 100 $DATA_DIR/hotspot3D/power_512x8 $DATA_DIR/hotspot3D/temp_512x8 output.out
+./pavle $DATA_DIR/huffman/test1024_H2.206587175259.in 
 ./hybridsort r
-
-./kmeans -o -i ../../data/kmeans/kdd_cup 
-
+./kmeans -o -i $DATA_DIR/kmeans/kdd_cup 
 ./lavaMD -boxes1d 10
-
-./leukocyte ../../../data/leukocyte/testfile.avi 10
-
+./leukocyte ../$DATA_DIR/leukocyte/testfile.avi 10
 ./lud_cuda -s 256 -v
-
-bin/mummergpu ../../data/mummergpu/NC_003997.fna ../../data/mummergpu/NC_003997_q100bp.fna > NC_00399.out
-
+./mummergpu $DATA_DIR/mummergpu/NC_003997.fna $DATA_DIR/mummergpu/NC_003997_q100bp.fna > NC_00399.out
 ./myocyte.out 100 1 0
-
 ./nn filelist_4 -r 5 -lat 30 -lng 90
-
 ./needle 2048 10
-
-
 ./particlefilter_naive -x 128 -y 128 -z 10 -np 1000
 ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
-
-
 ./pathfinder 100000 100 20 > result.txt
-
-
 ./srad_v1 100 0.5 502 458
 ./srad_v2 2048 2048 0 127 0 127 0.5 2
-
 ./sc_gpu 10 20 256 65536 65536 1000 none output.txt 1
 

@@ -1,0 +1,28 @@
+CUOPTS = -arch=sm_80
+
+
+CC := nvcc
+
+INCLUDE := 
+LIB := 
+
+SRC = l2_bw_128.cu
+
+EXE = l2_bw_128
+
+NVCC_FLGAS = -Xptxas -dlcm=cg -Xptxas -dscm=wt
+
+release:
+	$(CC) --ptxas-options=-v $(NVCC_FLGAS) $(CUOPTS) $(SRC) -o $(EXE) -I$(INCLUDE) -L$(LIB) -lcudart
+
+clean:
+	rm -f *.o; rm -f $(EXE)
+
+run:
+	./$(EXE)
+
+profile:
+	nvprof ./$(EXE)
+
+events:
+	nvprof  --events elapsed_cycles_sm ./$(EXE)
