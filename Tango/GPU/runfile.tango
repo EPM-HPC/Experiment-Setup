@@ -1,0 +1,6 @@
+./AN.out 10000
+./CN.out 7500
+./GRU.out
+./LSTM.out 1000
+./RN.out 100
+./SN.out 200
