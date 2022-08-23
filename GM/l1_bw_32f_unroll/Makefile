@@ -1,5 +1,5 @@
 
-CUOPTS = -arch=sm_80
+CUOPTS = -arch=sm_80 -O0 -Xcompiler -O0 -Xptxas -O0
 
 
 CC := nvcc
