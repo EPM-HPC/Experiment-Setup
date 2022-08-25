@@ -1,0 +1,1 @@
+GPU Elapsed Time = 0.01536
