@@ -8,17 +8,16 @@ LIBS= -lcuda
 BIN_DIR=/home/wwr/Desktop/EXEs/ExeGM-akhi-stall
 
 ARCH = 80
-FLAGS_NV= -gencode=arch=compute_$(ARCH),code=compute_$(ARCH)
-
+FLAGS_NV= -arch=sm_80
 SRCS = $(wildcard *.cu)
-PROGS = $(patsubst %.cu,%,$(SRCS))
+PROGS = $(patsubst %.cu,%.out,$(SRCS))
 PTXS = $(patsubst %.cu,%.ptx,$(SRCS))
 
 all: $(PROGS)
 
 ptx: $(PTXS)
 
-%: %.cu
+%.out: %.cu
 	nvcc $(FLAGS_NV) -O0 -Xcompiler -O0 -Xptxas -O0  -o $@ $< $(LIBS)
 
 %.ptx: %.cu
